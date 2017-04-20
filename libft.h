@@ -6,7 +6,7 @@
 /*   By: bmontoya <bmontoya@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 14:51:57 by bmontoya          #+#    #+#             */
-/*   Updated: 2017/04/20 03:01:26 by bmontoya         ###   ########.fr       */
+/*   Updated: 2017/04/20 03:25:18 by bmontoya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
-size_t			ft_strlen(const char *s);
+size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
-size_t			ft_strlcat(char *dst, const char *src, size_t n);
+size_t				ft_strlcat(char *dst, const char *src, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *big, const char *little);
@@ -75,12 +75,12 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *c, int fd);
 void				ft_putendl_fd(char const *c, int fd);
 void				ft_putnbr_fd(int c, int fd);
-t_list			*ft_lstnew(void const *content, size_t content_size);
+t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *n);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstdelnode(t_list **head, t_list *node);
 void				ft_lstaddback(t_list **alst, t_list *n);
 

@@ -6,7 +6,7 @@
 /*   By: bmontoya <bmontoya@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 14:51:57 by bmontoya          #+#    #+#             */
-/*   Updated: 2017/03/30 21:54:45 by bmontoya         ###   ########.fr       */
+/*   Updated: 2017/04/20 03:01:26 by bmontoya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,8 @@ void				ft_lstadd(t_list **alst, t_list *n);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstdelnode(t_list **head, t_list *node);
-void				ft_lstaddback(t_list **alst, t_list *new);
+void				ft_lstaddback(t_list **alst, t_list *n);
+
+void				ft_strcatmulti(char *s1, char *s2, size_t times);
+void				ft_strupper(char *str);
 #endif

@@ -1,6 +1,6 @@
 NAME = libft.a
 C = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 OBJS = ft_memset.o \
 	      ft_bzero.o \
 		  ft_memcpy.o \
@@ -60,7 +60,9 @@ OBJS = ft_memset.o \
 		  ft_lstiter.o \
 		  ft_lstmap.o \
 		  ft_lstdelnode.o \
-		  ft_lstaddback.o
+		  ft_lstaddback.o \
+		  ft_strcatmulti.o \
+		  ft_strupper.o
 
 $(NAME): $(OBJS)
 	ar rc $@ $^

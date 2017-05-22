@@ -62,23 +62,23 @@ PF_FILES	:= $(addprefix $(PRINTF_DIR)/, $(PF_FILES))
 #PRINTF--OBJECTS
 PF_OBJECT	:= $(addsuffix .o, $(PF_FILES))
 
-# .PHONY: clean fclean re all
+.PHONY: clean fclean re all
+
+all: $(NAME)
 
 $(NAME): $(FT_OBJECT) $(PF_OBJECT)
 	@echo 'Building $(NAME)'
-	@ar rc $@ $^
+	ar rc $@ $^
 
 %.o: %.c
-	@$(CC) -c -Iinclude/ $(FLAGS) $< -o $@
+	$(CC) -c -Iinclude/ $(FLAGS) $< -o $@
 
 clean:
 	@echo 'Removing object files'
-	@rm -rf $(FT_OBJECT) $(PF_OBJECT)
+	rm -rf $(FT_OBJECT) $(PF_OBJECT)
 
 fclean: clean
 	@echo 'Removing $(NAME)'
-	@rm -rf $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
-
-all: $(NAME)

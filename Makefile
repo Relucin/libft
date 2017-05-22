@@ -1,7 +1,7 @@
 NAME		:= libftprintf.a
 CC			:= gcc
 FLAGS		+= -Wall -Wextra -Werror
-FLAGS		+=-g
+# FLAGS		+=-g
 CTYPE_DIR	:= src/ft_ctype
 STDIO_DIR	:= src/ft_stdio
 STDLIB_DIR	:= src/ft_stdlib

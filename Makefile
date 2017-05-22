@@ -62,7 +62,7 @@ PF_FILES	:= $(addprefix $(PRINTF_DIR)/, $(PF_FILES))
 #PRINTF--OBJECTS
 PF_OBJECT	:= $(addsuffix .o, $(PF_FILES))
 
-.PHONY: clean fclean re all
+# .PHONY: clean fclean re all
 
 $(NAME): $(FT_OBJECT) $(PF_OBJECT)
 	@echo 'Building $(NAME)'

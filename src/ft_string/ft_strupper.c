@@ -6,14 +6,13 @@
 /*   By: bmontoya <bmontoya@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/21 17:38:39 by bmontoya          #+#    #+#             */
-/*   Updated: 2017/05/21 17:41:01 by bmontoya         ###   ########.fr       */
+/*   Updated: 2017/05/21 17:53:23 by bmontoya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <ftctype.h>
 
 void	ft_strupper(char *s)
 {
 	while (*s)
-		ft_toupper(*s++);
+		if (*s >= 'A' && *s <= 'Z')
+			*s++ -= 32;
 }

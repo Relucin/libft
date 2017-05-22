@@ -73,7 +73,7 @@ $(NAME): $(FT_OBJECT) $(PF_OBJECT)
 
 clean:
 	@echo 'Removing object files'
-	@rm -rf $(FT_OBJECT)
+	@rm -rf $(FT_OBJECT) $(PF_OBJECT)
 
 fclean: clean
 	@echo 'Removing $(NAME)'

@@ -6,7 +6,7 @@
 /*   By: bmontoya <bmontoya@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 19:02:46 by bmontoya          #+#    #+#             */
-/*   Updated: 2017/05/21 17:50:03 by bmontoya         ###   ########.fr       */
+/*   Updated: 2017/05/21 23:16:48 by bmontoya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,6 @@
 #include <ftstring.h>
 #include <stdlib.h>
 #include <unistd.h>
-
-int		ft_countrep(const char *str, char c)
-{
-	int count;
-
-	count = 0;
-	while (*str)
-	{
-		if (*str == c)
-			++count;
-		++str;
-	}
-	return (count);
-}
 
 int		ft_vasprintf(char **ret, const char *format, va_list ap)
 {
@@ -37,7 +23,7 @@ int		ft_vasprintf(char **ret, const char *format, va_list ap)
 	int			len;
 
 	ftpf_resetpart();
-	len = ft_countrep(format, '%');
+	len = ft_strcrep(format, '%');
 	parts = malloc(sizeof(*parts) * (len * 2 + 2));
 	phold = parts;
 	len = ftpf_parse(parts, format, ap);
@@ -54,6 +40,20 @@ int		ft_vasprintf(char **ret, const char *format, va_list ap)
 	}
 	free(phold);
 	return (len);
+}
+
+int		ft_dprintf(int fd, const char *format, ...)
+{
+	va_list	ap;
+	char	*cret;
+	int		iret;
+
+	va_start(ap, format);
+	iret = ft_vasprintf(&cret, format, ap);
+	write(fd, cret, iret);
+	free(cret);
+	va_end(ap);
+	return (iret);
 }
 
 int		ft_asprintf(char **ret, const char *format, ...)

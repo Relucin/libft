@@ -46,7 +46,7 @@ IO_FILES	+= ft_putchar
 #ftstdio--extra
 IO_FILES	+= ft_putstr ft_putendl ft_putnbr
 IO_FILES	+= ft_putchar_fd ft_putstr_fd ft_putendl_fd
-IO_FILES	+= ft_putnbr_fd
+IO_FILES	+= ft_putnbr_fd get_next_line
 IO_FILES	:= $(addprefix $(STDIO_DIR)/, $(IO_FILES))
 #dstruct/list
 DL_FILES	+= ft_lstnew ft_lstdelone ft_lstdel

@@ -1,7 +1,7 @@
-NAME		:= libftprintf.a
+NAME		:= libft.a
 CC			:= gcc
 FLAGS		+= -Wall -Wextra -Werror
-# FLAGS		+=-g
+FLAGS		+=-g
 CTYPE_DIR	:= src/ft_ctype
 STDIO_DIR	:= src/ft_stdio
 STDLIB_DIR	:= src/ft_stdlib
@@ -10,6 +10,7 @@ STRINGS_DIR	:= src/ft_strings
 PRINTF_DIR	:= src/ft_stdio/ft_printf
 LIST_DIR	:= src/data_structs/ft_list
 BTREE_DIR	:= src/data_structs/ft_btree
+DARR_DIR	:= src/data_structs/ft_darr
 ##LIBFT
 #ftstrings(bstring)
 SS_FILES	:= ft_bzero
@@ -24,7 +25,7 @@ S_FILES		+= ft_strlen ft_strcat ft_strchr
 S_FILES		+= ft_strcmp ft_strcpy ft_strncat
 S_FILES		+= ft_strncmp ft_strncpy ft_strrchr
 S_FILES		+= ft_strstr ft_strdup ft_strlcat
-S_FILES		+= ft_strnstr
+S_FILES		+= ft_strnstr ft_strtok
 #ftstring--extra
 S_FILES		+= ft_strnew ft_strdel ft_strclr
 S_FILES		+= ft_striter ft_striteri ft_strmap
@@ -57,10 +58,13 @@ DL_FILES	:= $(addprefix $(LIST_DIR)/, $(DL_FILES))
 DB_FILES	+= ft_btreeadd ft_btreeiof ft_btreenew
 DB_FILES	+= ft_btreermmin
 DB_FILES	:= $(addprefix $(BTREE_DIR)/, $(DB_FILES))
+#dstruct/darr
+DA_FILES	+= ft_darrnew ft_darradd ft_darrdel
+DA_FILES	:= $(addprefix $(DARR_DIR)/, $(DA_FILES))
 #LIBFT--OBJECTS
 FT_OBJECT	+= $(addsuffix .o, $(SS_FILES) $(S_FILES) $(LIB_FILES))
 FT_OBJECT	+= $(addsuffix .o, $(IO_FILES) $(CTYPE_FILES) $(DL_FILES))
-FT_OBJECT	+= $(addsuffix .o, $(DB_FILES))
+FT_OBJECT	+= $(addsuffix .o, $(DB_FILES) $(DA_FILES))
 ##PRINTF
 PF_FILES	+= ft_printf ftpf_checks ftpf_helpers
 PF_FILES	+= ftpf_strings ftpf_numbers ftpf_otypes

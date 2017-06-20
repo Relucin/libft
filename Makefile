@@ -60,6 +60,7 @@ DB_FILES	+= ft_btreermmin
 DB_FILES	:= $(addprefix $(BTREE_DIR)/, $(DB_FILES))
 #dstruct/darr
 DA_FILES	+= ft_darrnew ft_darradd ft_darrdel
+DA_FILES	+= ft_darrcat
 DA_FILES	:= $(addprefix $(DARR_DIR)/, $(DA_FILES))
 #LIBFT--OBJECTS
 FT_OBJECT	+= $(addsuffix .o, $(SS_FILES) $(S_FILES) $(LIB_FILES))
@@ -85,7 +86,7 @@ $(NAME): $(FT_OBJECT) $(PF_OBJECT)
 	@ar rc $@ $^
 
 %.o: %.c
-	@$(CC) -c -Iinclude/ $(FLAGS) $< -o $@
+	@$(CC) -c -Iincludes/ $(FLAGS) $< -o $@
 
 clean:
 	@echo 'Removing $(NAME)--object files'

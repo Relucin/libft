@@ -6,7 +6,7 @@
 /*   By: bmontoya <bmontoya@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/27 23:52:49 by bmontoya          #+#    #+#             */
-/*   Updated: 2017/05/28 02:29:41 by bmontoya         ###   ########.fr       */
+/*   Updated: 2017/06/19 23:11:04 by bmontoya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct	s_darr
 	size_t		len;
 }				t_darr;
 
-t_darr	*ft_darrnew(size_t space, size_t size);
-void	ft_darradd(t_darr *darr, void *data);
-void	ft_darrdel(t_darr *darr);
+t_darr			*ft_darrnew(size_t space, size_t size);
+void			ft_darradd(t_darr *darr, void *data);
+void			ft_darrdel(t_darr *darr);
 #endif
